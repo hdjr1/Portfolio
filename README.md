@@ -23,7 +23,7 @@ A beautiful, responsive web-based portfolio website built with HTML, CSS, and Ja
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/hdjr1/portfolio.git
    cd portfolio
    ```
 
