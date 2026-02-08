@@ -34,12 +34,37 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Project card video popup hover effect
+// Project card video popup - mouse and touch support
 document.querySelectorAll('.project-card').forEach(card => {
     const videoPopup = card.querySelector('.project-video-popup');
     const video = card.querySelector('.project-video');
     
+    // Mouse events
     card.addEventListener('mouseenter', () => {
+        playVideo();
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        stopVideo();
+    });
+    
+    // Touch events for mobile
+    card.addEventListener('touchstart', (e) => {
+        playVideo();
+    }, { passive: true });
+    
+    card.addEventListener('touchend', () => {
+        setTimeout(stopVideo, 2000);
+    }, { passive: true });
+    
+    // Click to show/hide on mobile
+    card.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            playVideo();
+        }
+    });
+    
+    function playVideo() {
         if (video) {
             video.currentTime = 0;
             const playPromise = video.play();
@@ -49,21 +74,27 @@ document.querySelectorAll('.project-card').forEach(card => {
                 });
             }
         }
-    });
+    }
     
-    card.addEventListener('mouseleave', () => {
+    function stopVideo() {
         if (video) {
             video.pause();
             video.currentTime = 0;
         }
-    });
-});
-
-// Add some interactivity to project cards
-document.querySelectorAll('.project-card').forEach(card => {
+    }
+    
+    // Cursor pointer on hover
     card.addEventListener('mouseenter', function() {
         this.style.cursor = 'pointer';
     });
+});
+
+// Improve touch targets for buttons
+document.querySelectorAll('.btn').forEach(btn => {
+    if (window.innerWidth <= 768) {
+        btn.style.minHeight = '48px';
+        btn.style.minWidth = '48px';
+    }
 });
 
 // Console message
