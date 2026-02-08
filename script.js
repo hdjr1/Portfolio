@@ -34,6 +34,31 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Project card video popup hover effect
+document.querySelectorAll('.project-card').forEach(card => {
+    const videoPopup = card.querySelector('.project-video-popup');
+    const video = card.querySelector('.project-video');
+    
+    card.addEventListener('mouseenter', () => {
+        if (video) {
+            video.currentTime = 0;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log('Video playback error:', error);
+                });
+            }
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+});
+
 // Add some interactivity to project cards
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {

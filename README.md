@@ -1,86 +1,81 @@
-# My Portfolio
+# Rodriguez Hadje – Web Portfolio
 
-A beautiful, responsive web-based portfolio website built with HTML, CSS, and JavaScript.
-
-## Features
-
-- 🎨 Modern, responsive design
-- ✨ Smooth animations and transitions
-- 📱 Mobile-friendly layout
-- 🎯 Multiple sections (Home, About, Projects, Skills, Contact)
-- 🔗 Easy navigation with smooth scrolling
-- 💫 Interactive hover effects
-
-## Sections
-
-- **Home** - Hero section with introduction
-- **About** - Personal information and background
-- **Projects** - Showcase of your projects with descriptions and technologies
-- **Skills** - Organized skills by category (Frontend, Backend, Database, Tools)
-- **Contact** - Easy way for visitors to get in touch
-
-## Getting Started
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   ```
-
-2. Open `index.html` in your web browser:
-   - Double-click the file, or
-   - Right-click and select "Open with" → your preferred browser
-
-3. Customize the content:
-   - Edit `index.html` to add your information
-   - Modify `style.css` for custom colors and styling
-   - Update `script.js` for additional interactivity
-
-## Customization
-
-### Colors
-Update the CSS variables in `style.css`:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    /* ... more variables */
-}
-```
-
-### Content
-Edit the following in `index.html`:
-- Personal information in the About section
-- Project details and links
-- Your actual email and social media links
-- Contact information
-
-## File Structure
-
-```
-portfolio/
-├── index.html      # Main HTML file
-├── style.css       # Styling
-├── script.js       # Interactivity
-└── README.md       # This file
-```
-
-## Browser Support
-
-Works on all modern browsers (Chrome, Firefox, Safari, Edge)
-
-## Deploy Options
-
-You can deploy this portfolio for free on:
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-- [Render](https://render.com/)
-
-## License
-
-Feel free to use this as a template for your portfolio!
+A personal web-based portfolio showcasing my projects, skills, and background as a Computer Science student and aspiring web developer. This portfolio highlights my experience in building functional, user-friendly systems using modern web technologies.
 
 ---
 
-**Note**: Remember to update the contact email and social media links with your actual information.
+## 🌐 About the Project
+
+This portfolio serves as my digital profile, where I present:
+- My background and interests in technology
+- Selected academic and personal projects
+- Technical skills across frontend, backend, and databases
+- Ways to get in touch for collaboration or opportunities
+
+The site is designed to be simple, responsive, and easy to navigate.
+
+---
+
+## 🧠 About Me
+
+I am a Computer Science student with a strong interest in software development, problem-solving, and emerging technologies. I enjoy working on web-based systems and continuously improving my skills through hands-on projects and academic learning. I am eager to grow, collaborate, and contribute to meaningful tech solutions.
+
+---
+
+## 🚀 Featured Projects
+
+### 🔹 PLMUN Alumni System
+A web-based platform designed to manage and track alumni data.  
+**Technologies:** PHP, MySQL, HTML, CSS, JavaScript, Bootstrap
+
+### 🔹 Student Competency Profiling System
+A profiling tool that evaluates student strengths and suggests suitable academic or career paths using multi-criteria analysis and genetic algorithms.  
+**Technologies:** Python, Tkinter, Matplotlib, PyTesseract
+
+### 🔹 PLMUN OJT Portal
+A web portal developed to support On-the-Job Training processes and student monitoring.  
+**Technologies:** PHP, JavaScript, CSS, Bootstrap
+
+### 🔹 Optimizing Traffic Congestion Using Genetic Algorithm
+A web-based traffic routing optimization system that analyzes multiple route alternatives using real-time data from Google Maps APIs.  
+**Technologies:** Python, Streamlit, Genetic Algorithm
+
+---
+
+## 🛠️ Skills & Technologies
+
+### Frontend
+- HTML5 & CSS  
+- JavaScript  
+- Bootstrap  
+
+### Backend
+- PHP  
+- Python  
+- Node.js  
+
+### Database
+- MySQL  
+- MariaDB  
+- Firebase  
+
+### Tools
+- Git & GitHub  
+- VS Code  
+- Anaconda Navigator  
+
+---
+
+## 📬 Contact
+
+Feel free to reach out for collaboration, opportunities, or inquiries:
+
+- 📧 Email: rodriguezhadje002@gmail.com  
+- 💻 GitHub: https://github.com/hdjr1  
+- 🔗 LinkedIn:   
+
+---
+
+## 📄 License
+
+This project is for personal and educational purposes.
