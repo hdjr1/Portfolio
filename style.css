@@ -243,6 +243,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.15);
     z-index: 9998;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -669,9 +670,6 @@ section {
         border-radius: 8px;
     }
 
-    .project-video-popup::before {
-        background: rgba(0, 0, 0, 0.5);
-    }
 }
 
 /* Extra small phones (360px and below) */
@@ -734,5 +732,9 @@ section {
     /* Better video popup for touch */
     .project-video-popup {
         border-radius: 12px;
+    }
+
+    .project-video-popup::before {
+        background: rgba(0, 0, 0, 0.1);
     }
 }
