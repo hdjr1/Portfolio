@@ -568,8 +568,8 @@ body.nav-open .nav-backdrop {
     display: flex;
     align-items: center;
     gap: 0;
-    background: #1a1a1a;
-    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     overflow: hidden;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -594,9 +594,11 @@ body.nav-open .nav-backdrop {
 }
 
 .project-item:hover {
-    border-color: #ffffff;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
 }
 
 .project-item .project-video-popup {
