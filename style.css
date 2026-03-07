@@ -729,7 +729,7 @@ body.nav-open .nav-backdrop {
 }
 
 .skill-category-panel {
-    background: #1a1a1a;
+    background: rgba(0, 0, 0, 0.4);
     border: 2px solid #333;
     border-radius: 12px;
     padding: 1.25rem;
@@ -748,7 +748,11 @@ body.nav-open .nav-backdrop {
 #skills-panel.active .skill-category-panel:nth-child(4) { animation-delay: 0.2s; }
 
 .skill-category-panel:hover {
-    border-color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
 }
 
 .skill-category-panel h3 {
