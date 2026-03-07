@@ -72,7 +72,7 @@ Feel free to reach out for collaboration, opportunities, or inquiries:
 
 - 📧 Email: rodriguezhadje002@gmail.com  
 - 💻 GitHub: https://github.com/hdjr1  
-- 🔗 LinkedIn:   
+- 🔗 LinkedIn: www.linkedin.com/in/hdjrz   
 
 ---
 
