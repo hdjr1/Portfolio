@@ -8,8 +8,9 @@
     user-select: none;
 }
 
-html {
-    background: #000000;
+html,
+body {
+    background: #000000 !important;
 }
 
 :root {
@@ -99,7 +100,6 @@ body > *:not(#cinematic-bg):not(#page-loader) {
 /* Typography */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: transparent;
     color: var(--text-dark);
     line-height: 1.6;
 }
