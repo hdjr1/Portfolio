@@ -242,19 +242,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// loader overlay – show for 2s, then fade away
-window.addEventListener('load', () => {
+// loader overlay – show for 3s, then fade away
+function startLoaderSequence() {
     const loader = document.getElementById('page-loader');
-    if (loader) {
-        document.body.classList.add('opening-active');
-        // Wait 5 seconds, then start fading
+    if (!loader || loader.dataset.started) return;
+    loader.dataset.started = 'true';
+    
+    document.body.classList.add('opening-active');
+    // Wait 3 seconds, then start fading
+    setTimeout(() => {
+        loader.classList.add('loaded');
+        // Remove loader after fade finishes (0.3s transition)
         setTimeout(() => {
-            loader.classList.add('loaded');
-            // Remove loader after fade finishes (0.5s transition)
-            setTimeout(() => {
-                loader.remove();
-                document.body.classList.remove('opening-active');
-                document.body.classList.add('opening-complete');
+            loader.remove();
+            document.body.classList.remove('opening-active');
+            document.body.classList.add('opening-complete');
 
                 // Animate hero left children one by one
                 const heroLeft = document.querySelector('.hero-left');
@@ -278,7 +280,10 @@ window.addEventListener('load', () => {
                 }
             }, 300);
         }, 3000);
-    }
+}
+
+window.addEventListener('load', () => {
+    startLoaderSequence();
 
     // animate nav wrapper immediately
     const nav = document.querySelector('.nav-wrapper');
@@ -289,6 +294,13 @@ window.addEventListener('load', () => {
     const hero = document.querySelector('.hero-wrapper');
     if (hero) {
         hero.classList.add('animate-on-scroll', 'visible');
+    }
+});
+
+// Also handle bfcache (back/forward navigation)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        startLoaderSequence();
     }
 });
 
