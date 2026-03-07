@@ -242,17 +242,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// loader overlay – fade away when everything is loaded
+// loader overlay – show for 2s, then fade away
 window.addEventListener('load', () => {
     const loader = document.getElementById('page-loader');
     if (loader) {
         document.body.classList.add('opening-active');
-        loader.classList.add('loaded');
+        // Wait 5 seconds, then start fading
         setTimeout(() => {
-            loader.remove();
-            document.body.classList.remove('opening-active');
-            document.body.classList.add('opening-complete');
-        }, 1300);
+            loader.classList.add('loaded');
+            // Remove loader after fade finishes (0.5s transition)
+            setTimeout(() => {
+                loader.remove();
+                document.body.classList.remove('opening-active');
+                document.body.classList.add('opening-complete');
+
+                // Animate hero left children one by one
+                const heroLeft = document.querySelector('.hero-left');
+                if (heroLeft) {
+                    heroLeft.querySelectorAll(':scope > *').forEach((el, i) => {
+                        el.classList.add('hero-slide-left');
+                        el.style.animationDelay = `${i * 0.15}s`;
+                    });
+                }
+
+                // Animate hero right children one by one
+                const navCards = document.querySelectorAll('.home-panel .nav-card');
+                const socials = document.querySelector('.home-panel .hero-socials');
+                navCards.forEach((card, i) => {
+                    card.classList.add('hero-slide-right');
+                    card.style.animationDelay = `${i * 0.12}s`;
+                });
+                if (socials) {
+                    socials.classList.add('hero-slide-right');
+                    socials.style.animationDelay = `${navCards.length * 0.12}s`;
+                }
+            }, 300);
+        }, 3000);
     }
 
     // animate nav wrapper immediately

@@ -60,11 +60,9 @@ body > *:not(#cinematic-bg):not(#page-loader) {
     background: #000000;
     z-index: 2000;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #page-loader.loaded {
@@ -73,29 +71,56 @@ body > *:not(#cinematic-bg):not(#page-loader) {
     pointer-events: none;
 }
 
-#page-loader .opening-copy {
-    color: #ffffff;
-    font-size: clamp(1.1rem, 3vw, 2rem);
-    letter-spacing: 0.5rem;
-    font-weight: 800;
-    animation: openingPulse 1.1s ease-in-out infinite alternate;
-}
-
-#page-loader .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ffffff;
-    border-top-color: transparent;
+.loader {
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    perspective: 800px;
 }
 
-@keyframes openingPulse {
-    from { opacity: 0.55; transform: translateY(0); }
-    to { opacity: 1; transform: translateY(-4px); }
+.inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
-@keyframes spin { to { transform: rotate(360deg); } }
+.inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 1s linear infinite;
+    border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 1s linear infinite;
+    border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 1s linear infinite;
+    border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+    0%   { transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
+    100% { transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); }
+}
+
+@keyframes rotate-two {
+    0%   { transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
+    100% { transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); }
+}
+
+@keyframes rotate-three {
+    0%   { transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
+    100% { transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); }
+}
 
 /* Typography */
 body {
@@ -264,6 +289,26 @@ body.nav-open .nav-backdrop {
     gap: clamp(1rem, 3vw, 1.5rem);
 }
 
+.hero-left > * {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.hero-slide-left {
+    animation: slideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .hero-greeting {
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: var(--text-light);
@@ -292,6 +337,27 @@ body.nav-open .nav-backdrop {
     gap: clamp(2rem, 5vw, 3rem);
     position: relative;
     min-height: 380px;
+}
+
+.home-panel .nav-card,
+.home-panel .hero-socials {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.hero-slide-right {
+    animation: slideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Navigation Cards Grid */
