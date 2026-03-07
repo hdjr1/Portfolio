@@ -6,8 +6,8 @@ class DotPatternBackground {
 
     this.dotSize = options.dotSize || 2;
     this.gap = options.gap || 24;
-    this.baseColor = this.hexToRgb(options.baseColor || "#404040");
-    this.glowColor = this.hexToRgb(options.glowColor || "#22d3ee");
+    this.baseColor = this.hexToRgb(options.baseColor || "#A18D6D");
+    this.glowColor = this.hexToRgb(options.glowColor || "#9BB4C0");
     this.proximity = options.proximity || 120;
     this.glowIntensity = options.glowIntensity ?? 1;
     this.waveSpeed = options.waveSpeed ?? 0.5;
@@ -19,8 +19,7 @@ class DotPatternBackground {
     this.startTime = Date.now();
     this.animationId = 0;
     this.resizeObserver = null;
-    this.interactionSurface =
-      this.container.closest(".projects") || this.container.parentElement || this.container;
+    this.interactionSurface = this.container.closest("section") || this.container.parentElement || this.container;
 
     this.handleMouseMove = (e) => this.onMouseMove(e);
     this.handleMouseLeave = () => this.onMouseLeave();

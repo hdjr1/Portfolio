@@ -7,7 +7,7 @@ class SnowBackground {
     this.count = options.count || 150;
     this.intensity = options.intensity || 1;
     this.wind = options.wind ?? 0.3;
-    this.color = options.color || "rgba(255, 255, 255, 0.9)";
+    this.color = options.color || "rgba(225, 208, 179, 0.9)";
     this.speed = options.speed || 1;
 
     this.canvas = null;

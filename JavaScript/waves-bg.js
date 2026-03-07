@@ -4,7 +4,7 @@ class LightWavesBackground {
     this.container = document.getElementById(containerId);
     if (!this.container) return;
 
-    this.colors = options.colors || ["#0ea5e9", "#8b5cf6", "#06b6d4", "#a855f7", "#0284c7"];
+    this.colors = options.colors || ["#9BB4C0", "#E1D0B3", "#A18D6D", "#703B3B", "#E1D0B3"];
     this.speed = options.speed || 1;
     this.intensity = options.intensity || 0.6;
 

@@ -7,7 +7,7 @@ class SpotlightBackground {
     // Get the parent section for event listening
     this.container = this.bgContainer.parentElement;
     
-    this.colors = Array.isArray(options.colors) ? options.colors : [options.colors || "rgba(120, 119, 198, 0.3)"];
+    this.colors = Array.isArray(options.colors) ? options.colors : [options.colors || "rgba(155, 180, 192, 0.4)"];
     this.size = options.size || 400;
     this.blur = options.blur || 80;
     this.smoothing = options.smoothing || 0.1;

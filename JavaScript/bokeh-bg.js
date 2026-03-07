@@ -9,11 +9,11 @@ class BokehBackground {
     this.maxSize = options.maxSize || 200;
     this.speed = options.speed || 1;
     this.colors = options.colors || [
-      "rgba(255, 200, 120, 0.3)",
-      "rgba(255, 180, 100, 0.25)",
-      "rgba(255, 220, 150, 0.2)",
-      "rgba(255, 160, 80, 0.25)",
-      "rgba(255, 240, 200, 0.2)",
+      "rgba(155, 180, 192, 0.4)",
+      "rgba(225, 208, 179, 0.35)",
+      "rgba(161, 141, 109, 0.3)",
+      "rgba(112, 59, 59, 0.35)",
+      "rgba(225, 208, 179, 0.3)",
     ];
 
     this.canvas = document.createElement("canvas");

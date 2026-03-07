@@ -4,220 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <meta name="description" content="Portfolio of Rodriguez Hadje - Web Developer specializing in PHP, JavaScript, Python, and modern web technologies.">
-    <meta name="theme-color" content="#3d6b7a">
+    <meta name="theme-color" content="#703B3B">
     <title>Rodriguez Hadje - Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">hdjrz</div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <a href="#home" class="skip-link">Skip to content</a>
+    <!-- page loader -->
+    <div id="page-loader">
+        <div class="opening-copy">RODRIGUEZ HADJE</div>
+        <div class="spinner"></div>
+    </div>
+    <div id="cinematic-bg" aria-hidden="true">
+        <canvas id="cinematic-canvas"></canvas>
+        <div class="cinematic-vignette"></div>
+    </div>
+    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div id="hero-bg" class="hero-bg"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I’m Rodriguez Hadje</h1>
-                <p class="hero-subtitle">I am a web developer with growing experience in building web-based systems. I focus on learning modern technologies and applying them to create functional and user-friendly applications.</p>
-                <a href="#projects" class="btn btn-primary wave-grid-btn"><span class="wave-grid-btn__label">View My Work</span></a>
+        <div class="hero-wrapper">
+            <!-- Left Side: Intro Content -->
+            <div class="hero-left">
+                <div class="hero-greeting">Hello </div>
+                <h1 class="hero-name">I'm Rodriguez Hadje</h1>
+                <p class="hero-bio">A web developer with growing experience in building web-based systems. I focus on learning modern technologies and applying them to create functional and user-friendly applications.</p>
+                <a href="resume.pdf" download="Rodriguez_Hadje_Resume.pdf" class="btn btn-primary">Download Resume</a>
+            </div>
+
+            <!-- Right Side: Navigation Cards & Content Panels -->
+            <div class="hero-right">
+                <!-- Home Panel (Nav Cards & Socials) -->
+                <div class="content-panel home-panel active" id="home-panel">
+                    <nav class="nav-cards" aria-label="Main navigation">
+                        <button class="nav-card" data-target="projects-panel">
+                            <div class="nav-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                            </div>
+                            <div class="nav-card-label">My Projects</div>
+                        </button>
+                        <button class="nav-card" data-target="about-panel">
+                            <div class="nav-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div class="nav-card-label">About me</div>
+                        </button>
+                        <button class="nav-card" data-target="blog-panel">
+                            <div class="nav-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3"/></svg>
+                            </div>
+                            <div class="nav-card-label">My Blog</div>
+                        </button>
+                        <button class="nav-card" data-target="skills-panel">
+                            <div class="nav-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17.77 14.14 18.54 21.02 12 17.77 5.46 21.02 6.23 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <div class="nav-card-label">My Skills</div>
+                        </button>
+                    </nav>
+
+                    <!-- Social Icons -->
+                    <div class="hero-socials">
+                        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c3.61 6.43 6.87 10.35 8.92 17.25m1.73-4.39l-2.87-2.87m2.97-5.52c3.11 3.11 3.56 7.39 2.37 11.26"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/hdjrdrgz" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hdjrz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="https://github.com/hdjr1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projects Panel -->
+                <div class="content-panel" id="projects-panel">
+                    <button class="back-btn" data-target="home-panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Back
+                    </button>
+                    <h2 class="panel-title">My Projects</h2>
+                    <div class="panel-content projects-list">
+                        <div class="project-item">
+                            <div class="project-video-popup">
+                                <video class="project-video" loop muted>
+                                    <source src="videos/plmun-alumni-system.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="project-info">
+                                <h3>PLMUN Alumni System</h3>
+                                <p>A web-based platform designed to manage and track alumni data, built using PHP, MySQL, HTML, and CSS.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Php</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Css</span>
+                                    <span class="tag">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-video-popup">
+                                <video class="project-video" loop muted>
+                                    <source src="videos/student-competency-system.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="project-info">
+                                <h3>Student Competency Profiling System</h3>
+                                <p>A profiling tool developed using PHP that evaluates student strengths and suggests suitable academic or career paths.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Tkinter</span>
+                                    <span class="tag">Matplotlib</span>
+                                    <span class="tag">PyTesseract</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-video-popup">
+                                <video class="project-video" loop muted>
+                                    <source src="videos/plmun-ojt-portal.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="project-info">
+                                <h3>PLMUN OJT Portal</h3>
+                                <p>Real-time weather information with beautiful visualizations and forecasts.</p>
+                                <div class="project-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">HTML5</span>
+                                    <span class="tag">Css</span>
+                                    <span class="tag">APIs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-video-popup">
+                                <video class="project-video" loop muted>
+                                    <source src="videos/traffic-congestion-system.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="project-info">
+                                <h3>Traffic Congestion Optimization</h3>
+                                <p>A web-based traffic routing optimization system using Python and Streamlit with Google Maps APIs.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Streamlit</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">Flask</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Panel -->
+                <div class="content-panel" id="about-panel">
+                    <button class="back-btn" data-target="home-panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Back
+                    </button>
+                    <h2 class="panel-title">About Me</h2>
+                    <div class="panel-content about-panel-content">
+                        <p>I'm a dedicated Computer Science student with a strong passion for technology, problem-solving, and innovation. I enjoy exploring areas like programming, software development, data structures, and emerging technologies such as AI and Web Development.</p>
+                        <p>Currently building my skills through hands-on projects and academic learning. Eager to learn, collaborate, and grow in the tech industry.</p>
+                        <p>When I'm not coding, you can find me exploring new technologies, playing online games, or sharing knowledge with the community.</p>
+                    </div>
+                </div>
+
+                <!-- Blog Panel -->
+                <div class="content-panel" id="blog-panel">
+                    <button class="back-btn" data-target="home-panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Back
+                    </button>
+                    <h2 class="panel-title">My Blog</h2>
+                    <div class="panel-content blog-panel-content">
+                        <p class="coming-soon">Coming Soon!</p>
+                        <p>Stay tuned for articles about web development, programming tips, and my learning journey.</p>
+                    </div>
+                </div>
+
+                <!-- Skills Panel -->
+                <div class="content-panel" id="skills-panel">
+                    <button class="back-btn" data-target="home-panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Back
+                    </button>
+                    <h2 class="panel-title">My Skills</h2>
+                    <div class="panel-content skills-panel-content">
+                        <div class="skill-category-panel">
+                            <h3>Frontend</h3>
+                            <ul>
+                                <li>Bootstrap</li>
+                                <li>HTML5 & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category-panel">
+                            <h3>Backend</h3>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Php</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category-panel">
+                            <h3>Database</h3>
+                            <ul>
+                                <li>Firebase</li>
+                                <li>MariaDB</li>
+                                <li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category-panel">
+                            <h3>Tools & Other</h3>
+                            <ul>
+                                <li>Anaconda Navigator</li>
+                                <li>Git & GitHub</li>
+                                <li>VS Code</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div id="about-bg" class="about-bg"></div>
-        <div class="container about-container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I’m a dedicated Computer Science student with a strong passion for technology, problem-solving, and innovation. I enjoy exploring areas like programming, software development, data structures, and emerging technologies such as AI and Web Development. Currently building my skills through hands-on projects and academic learning. Eager to learn, collaborate, and grow in the tech industry.
-                    </p>
-                    <p>
-                        When I'm not coding, you can find me exploring new technologies, 
-                        playing online games, or sharing knowledge with the community.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div id="projects-bg" class="projects-bg"></div>
-        <div class="container projects-container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-video-popup">
-                        <video class="project-video" loop muted autoplay>
-                            <source src="videos/plmun-alumni-system.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="project-header">
-                        <h3>PLMUN Alumni System</h3>
-                    </div>
-                    <p class="project-description">
-                         A web-based platform designed to 
-                         manage and track alumni data, built using PHP, MySQL, HTML, and CSS.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Php</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Css</span>
-                        <span class="tag">Bootstrap</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-video-popup">
-                        <video class="project-video" loop muted autoplay>
-                            <source src="videos/student-competency-system.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="project-header">
-                        <h3>Student Competency Profiling System</h3>
-                    </div>
-                    <p class="project-description">
-                        A profiling tool developed using PHP that evaluates student strengths and suggests suitable academic or career paths based on multi-criteria analysis and genetic algorithm.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
-                        <span class="tag">Matplotlib</span>
-                        <span class="tag">PyTesseract</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-video-popup">
-                        <video class="project-video" loop muted autoplay>
-                            <source src="videos/plmun-ojt-portal.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="project-header">
-                        <h3>PLMUN OJT Portal</h3>
-                    </div>
-                    <p class="project-description">
-                        Real-time weather information with beautiful visualizations and forecasts.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Php</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Css</span>
-                        <span class="tag">Bootstrap</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-video-popup">
-                        <video class="project-video" loop muted autoplay>
-                            <source src="videos/traffic-congestion-system.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="project-header">
-                        <h3>Optimizing Traffic Congestion Using Genetic Algorithm</h3>
-                    </div>
-                    <p class="project-description">
-                        This project is a web-based traffic routing optimization system developed using Python and Streamlit. It integrates real-time data from Google Maps APIs to analyze multiple route alternatives between a user-selected origin and destination.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">Flask</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div id="skills-bg" class="skills-bg"></div>
-        <div class="container skills-container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>Bootstrap</li>
-                        <li>HTML5 & CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Php</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <ul>
-                        <li>Firebase</li>
-                        <li>MariaDB</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Other</h3>
-                    <ul>
-                        <li>Anaconda Navigator</li>
-                        <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'd love to hear from you! Feel free to reach out with any inquiries or opportunities.</p>
-                <div class="contact-links">
-                    <a href="mailto:rodriguezhadje002@gmail.com" class="btn btn-primary">Send Email</a>
-                    <a href="https://github.com"  class="btn btn-secondary">GitHub</a>
-                    <a href="https://linkedin.com"  class="btn btn-secondary">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="waves-bg.js"></script>
-    <script src="spotlight-bg.js"></script>
-    <script src="bokeh-bg.js"></script>
-    <script src="dot-pattern-bg.js"></script>
-    <script src="snow-bg.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

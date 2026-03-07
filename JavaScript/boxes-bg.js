@@ -3,19 +3,20 @@ class BoxesBackground {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
     if (!this.container) return;
-    this.interactionSurface =
-      this.container.closest(".projects") || this.container.parentElement || this.container;
+    
+    // Get proper interaction surface
+    this.interactionSurface = this.container.closest("section") || this.container.parentElement || this.container;
 
     this.palette = options.colors || [
-      "rgb(125 211 252)",
-      "rgb(249 168 212)",
-      "rgb(134 239 172)",
-      "rgb(253 224 71)",
-      "rgb(252 165 165)",
-      "rgb(216 180 254)",
-      "rgb(147 197 253)",
-      "rgb(165 180 252)",
-      "rgb(196 181 253)",
+      "rgb(155 180 192)",
+      "rgb(225 208 179)",
+      "rgb(161 141 109)",
+      "rgb(112 59 59)",
+      "rgb(205 190 166)",
+      "rgb(140 123 97)",
+      "rgb(128 83 83)",
+      "rgb(145 130 103)",
+      "rgb(190 175 152)",
     ];
 
     this.cellWidth = options.cellWidth || 64;
@@ -42,10 +43,10 @@ class BoxesBackground {
 
   createLayers() {
     this.gridLayer = document.createElement("div");
-    this.gridLayer.className = "projects-boxes-layer";
+    this.gridLayer.className = "boxes-grid-layer";
 
     this.maskLayer = document.createElement("div");
-    this.maskLayer.className = "projects-boxes-mask";
+    this.maskLayer.className = "boxes-grid-mask";
 
     this.container.appendChild(this.gridLayer);
     this.container.appendChild(this.maskLayer);
@@ -70,7 +71,7 @@ class BoxesBackground {
   handlePointerMove(event) {
     const stack = document.elementsFromPoint(event.clientX, event.clientY);
     const targetCell = stack.find(
-      (el) => el.classList && el.classList.contains("projects-boxes-cell")
+      (el) => el.classList && el.classList.contains("boxes-grid-cell")
     );
 
     if (targetCell) {
@@ -91,17 +92,17 @@ class BoxesBackground {
 
     for (let r = 0; r < rows; r++) {
       const row = document.createElement("div");
-      row.className = "projects-boxes-row";
+      row.className = "boxes-grid-row";
 
       for (let c = 0; c < cols; c++) {
         const cell = document.createElement("div");
-        cell.className = "projects-boxes-cell";
+        cell.className = "boxes-grid-cell";
 
         if (r % 2 === 0 && c % 2 === 0) {
           const plus = document.createElementNS("http://www.w3.org/2000/svg", "svg");
           plus.setAttribute("viewBox", "0 0 24 24");
           plus.setAttribute("aria-hidden", "true");
-          plus.classList.add("projects-boxes-plus");
+          plus.classList.add("boxes-grid-plus");
 
           const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
           path.setAttribute("d", "M12 6v12m6-6H6");
