@@ -22,16 +22,15 @@
         <canvas id="cinematic-canvas"></canvas>
         <div class="cinematic-vignette"></div>
     </div>
-    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-wrapper">
             <!-- Left Side: Intro Content -->
             <div class="hero-left">
-                <div class="hero-greeting">Hello </div>
+                <div class="hero-greeting">Hello</div>
                 <h1 class="hero-name">I'm Rodriguez Hadje</h1>
-                <p class="hero-bio">A web developer with growing experience in building web-based systems. I focus on learning modern technologies and applying them to create functional and user-friendly applications.</p>
+                <p class="hero-bio">A web developer with growing experience in building web based systems. I focus on learning modern technologies and applying them to create functional and user friendly applications.</p>
                 <a href="resume.pdf" download="Rodriguez_Hadje_Resume.pdf" class="btn btn-primary">Feel free to see my Resume</a>
             </div>
 
@@ -90,6 +89,11 @@
                         Back
                     </button>
                     <h2 class="panel-title">My Projects</h2>
+                    <div class="projects-pager" aria-label="Projects pagination">
+                        <button id="projects-prev" class="pager-btn" type="button" aria-label="Previous projects">&larr;</button>
+                        <span id="projects-page-indicator" class="pager-indicator">1 / 2</span>
+                        <button id="projects-next" class="pager-btn" type="button" aria-label="Next projects">&rarr;</button>
+                    </div>
                     <div class="panel-content projects-list">
                         <div class="project-item">
                             <div class="project-video-popup">
@@ -234,7 +238,6 @@
             </div>
         </div>
     </section>
-
 
     <script src="script.js"></script>
 </body>
